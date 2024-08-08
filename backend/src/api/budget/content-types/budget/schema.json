@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budgets",
+  "info": {
+    "singularName": "budget",
+    "pluralName": "budgets",
+    "displayName": "Budget"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "food",
+        "transportation",
+        "housing",
+        "savings"
+      ]
+    },
+    "amount": {
+      "type": "integer"
+    }
+  }
+}
