@@ -821,6 +821,36 @@ export interface ApiBudgetBudget extends Schema.CollectionType {
   };
 }
 
+export interface ApiBudgetLimitBudgetLimit extends Schema.CollectionType {
+  collectionName: 'budget_limits';
+  info: {
+    singularName: 'budget-limit';
+    pluralName: 'budget-limits';
+    displayName: 'BudgetLimits';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    limit: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::budget-limit.budget-limit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::budget-limit.budget-limit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExpenseExpense extends Schema.CollectionType {
   collectionName: 'expenses';
   info: {
@@ -902,6 +932,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::budget.budget': ApiBudgetBudget;
+      'api::budget-limit.budget-limit': ApiBudgetLimitBudgetLimit;
       'api::expense.expense': ApiExpenseExpense;
       'api::income.income': ApiIncomeIncome;
     }

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budget_limits",
+  "info": {
+    "singularName": "budget-limit",
+    "pluralName": "budget-limits",
+    "displayName": "BudgetLimits"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "limit": {
+      "type": "integer"
+    }
+  }
+}
